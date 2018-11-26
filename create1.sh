@@ -1,25 +1,25 @@
-time python client.py config.txt upload ./data/f1
-time python client.py config.txt upload ./data/f2
-time python client.py config.txt upload ./data/f3
-time python client.py config.txt upload ./data/f4
-time python client.py config.txt upload ./data/f5
-time python client.py config.txt upload ./data/f6
-time python client.py config.txt upload ./data/f7
-time python client.py config.txt upload ./data/f8
-time python client.py config.txt upload ./data/f9
-time python client.py config.txt upload ./data/f10
-time python client.py config.txt upload ./data/f11
-time python client.py config.txt upload ./data/f12
-time python client.py config.txt upload ./data/f13
-time python client.py config.txt upload ./data/f14
-time python client.py config.txt upload ./data/f15
-time python client.py config.txt upload ./data/f16
-time python client.py config.txt upload ./data/f17
-time python client.py config.txt upload ./data/f18
-time python client.py config.txt upload ./data/f19
-time python client.py config.txt upload ./data/f20
-time python client.py config.txt upload ./data/f21
-time python client.py config.txt upload ./data/f22
-time python client.py config.txt upload ./data/f23
-time python client.py config.txt upload ./data/f24
-time python client.py config.txt upload ./data/f25
+dd if=/dev/urandom of=./data/f1 bs=1000 count=4
+dd if=/dev/urandom of=./data/f2 bs=1000 count=4
+dd if=/dev/urandom of=./data/f3 bs=1000 count=4
+dd if=/dev/urandom of=./data/f4 bs=1000 count=4
+dd if=/dev/urandom of=./data/f5 bs=1000 count=4
+dd if=/dev/urandom of=./data/f6 bs=1000 count=4
+dd if=/dev/urandom of=./data/f7 bs=1000 count=4
+dd if=/dev/urandom of=./data/f8 bs=1000 count=4
+dd if=/dev/urandom of=./data/f9 bs=1000 count=4
+dd if=/dev/urandom of=./data/f10 bs=1000 count=4
+dd if=/dev/urandom of=./data/f11 bs=1000 count=4
+dd if=/dev/urandom of=./data/f12 bs=1000 count=4
+dd if=/dev/urandom of=./data/f13 bs=1000 count=4
+dd if=/dev/urandom of=./data/f14 bs=1000 count=4
+dd if=/dev/urandom of=./data/f15 bs=1000 count=4
+dd if=/dev/urandom of=./data/f16 bs=1000 count=4
+dd if=/dev/urandom of=./data/f17 bs=1000 count=4
+dd if=/dev/urandom of=./data/f18 bs=1000 count=4
+dd if=/dev/urandom of=./data/f19 bs=1000 count=4
+dd if=/dev/urandom of=./data/f20 bs=1000 count=4
+dd if=/dev/urandom of=./data/f21 bs=1000 count=4
+dd if=/dev/urandom of=./data/f22 bs=1000 count=4
+dd if=/dev/urandom of=./data/f23 bs=1000 count=4
+dd if=/dev/urandom of=./data/f24 bs=1000 count=4
+dd if=/dev/urandom of=./data/f25 bs=1000 count=4

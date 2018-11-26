@@ -110,7 +110,9 @@ class SurfStoreClient():
                         break
                 if not exist:
                     #need to insert to block
-                    block2insert = self.block_list[findServerHash(h, self.block_num)]
+                    block2insertIdx = findServerHash(h, self.block_num)
+                    block2insert = self.block_list[block2insertIdx]
+                    self.matadataStore.store_hash_info(h, block2insertIdx)
                     block2insert.store_block(h, hash_block_map[h])#hash, correponding block content  ## use tuple
 
         if (self.findServerOption == 2):
@@ -135,6 +137,7 @@ class SurfStoreClient():
             print "save the files to block %d th" % block2insertIdx
             for h in hash_block_map.keys():
                 block2insert.store_block(h, hash_block_map[h])
+                self.metadataStore.store_hash_info(h, block2insertIdx)
 
 
 
@@ -198,13 +201,15 @@ class SurfStoreClient():
         curr_blocks = []
 
 #        print("currversion" + str(curr_version) + "curr_hashlist" + str(curr_hashlist))
-        for h in curr_hashlist:
-
-            for b in self.block_list:
-                if b.has_block(h):
-                    curr_blocks.append(b.get_block(h))
-                    break
-
+#        for h in curr_hashlist:
+#
+#            for b in self.block_list:
+#                if b.has_block(h):
+#                    curr_blocks.append(b.get_block(h))
+#                    break
+        block_idxs = self.metadataStore.get_server(curr_hashlist)
+        curr_blocks = [self.block_list[block_idxs[i]].get_block(curr_hashlist[i]) for i in range(len(curr_hashlist))]
+        
 
         #what if missing block?
         if (len(curr_blocks) == 0):

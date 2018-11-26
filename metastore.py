@@ -67,7 +67,7 @@ class MetadataStore(rpyc.Service):
         for i in range(2, 2 + self.block_num):
             infos = lines[i].split(":")
             self.block_list.append(rpyc.connect(infos[1].strip(), int(infos[2])).root)
-
+        self.hash_server_map = {}
     '''
         ModifyFile(f,v,hl): Modifies file f so that it now contains the
         contents refered to by the hashlist hl.  The version provided, v, must
@@ -192,6 +192,15 @@ class MetadataStore(rpyc.Service):
             # don't know weather I should do it
         return currFile.version, currFile.hashlist
 
+    def exposed_store_hash_info(self, h, block2insertIdx):
+        self.hash_server_map[h] = block2insertIdx
+        return
+    
+    def exposed_get_server(self,hash_list):
+        blockIdxs = [0]*len(hash_list)
+        for i in range(len(hash_list)):
+            blockIdxs[i] = self.hash_server_map[hash_list[i]]
+        return blockIdxs
 
 if __name__ == '__main__':
     from rpyc.utils.server import ThreadPoolServer

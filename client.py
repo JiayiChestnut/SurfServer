@@ -112,7 +112,7 @@ class SurfStoreClient():
                     #need to insert to block
                     block2insertIdx = findServerHash(h, self.block_num)
                     block2insert = self.block_list[block2insertIdx]
-                    self.matadataStore.store_hash_info(h, block2insertIdx)
+                    self.metadataStore.store_hash_info(h, block2insertIdx)
                     block2insert.store_block(h, hash_block_map[h])#hash, correponding block content  ## use tuple
 
         if (self.findServerOption == 2):
@@ -133,6 +133,7 @@ class SurfStoreClient():
                 if (pingTime < minTime):
                     block2insertIdx = i
                     minTime = pingTime
+                    print "block", i, pingTime 
             block2insert = self.block_list[block2insertIdx]
             print "save the files to block %d th" % block2insertIdx
             for h in hash_block_map.keys():

@@ -1,11 +1,3 @@
-mkdir hw7
-cd hw7
-sudo yum install git-all
-sudo pip install rpyc
-git clone https://github.com/JiayiChestnut/SurfServer.git
-
-
-mkdir data
 dd if=/dev/urandom of=./data/f1 bs=1000 count=4
 dd if=/dev/urandom of=./data/f2 bs=1000 count=4
 dd if=/dev/urandom of=./data/f3 bs=1000 count=4

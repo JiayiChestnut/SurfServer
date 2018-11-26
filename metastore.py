@@ -28,8 +28,14 @@ class ErrorResponse(Exception):
 	def file_not_found(self):
 		self.error_type = 3
 
-def findServer(h, numBlockStores):
-	return int(h,16) % numBlockStores
+#def findServer(h, numBlockStores):
+#	return int(h,16) % numBlockStores
+
+def findServer(h, block_list):
+    for i in range(len(block_list)):
+        b = block_list[i]
+        if (h in b.blcok_map):
+            return i
 
 '''
 The MetadataStore RPC server class.
@@ -102,7 +108,8 @@ class MetadataStore(rpyc.Service):
 
         #check blocks
         for h in new_hashlist:
-            idxBlockStore = findServer(h, self.block_num)
+#            idxBlockStore = findServer(h, self.block_num)#we can't use this. we need to heavliy search the hash code in each block
+            idxBlockStore = findServer(h, self.block_list)
             if not self.block_list[idxBlockStore].has_block(h):
                 e = ErrorResponse("missing blocks of " + filename)
                 e.missing_blocks(hashlist)

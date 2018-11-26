@@ -79,7 +79,7 @@ class SurfStoreClient():
         infos = lines[1].split(":")
 #        print(infos)
         self.metadataStore = rpyc.connect(infos[1].strip(), int(infos[2])).root
-        
+
         #choose the server finding
         self.findServerOption = int(lines[2 + self.block_num])
         """
@@ -126,12 +126,13 @@ class SurfStoreClient():
                     endT = time.time()
                     pingTime += endT-startT
                 pingTime /= 3
-                    
-                    
+
+
                 if (pingTime < minTime):
                     block2insertIdx = i
                     minTime = pingTime
             block2insert = self.block_list[block2insertIdx]
+			print "save the files to block %d th" % block2insertIdx
             for h in hash_block_map.keys():
                 block2insert.store_block(h, hash_block_map[h])
 
@@ -187,7 +188,7 @@ class SurfStoreClient():
         if DEBUG:
             print("try to download:", filename)
         curr_version, curr_hashlist = self.metadataStore.read_file(filename)
-        
+
         if (curr_version == 0 and len(curr_hashlist) == 0):
             print("Not Found")
             return

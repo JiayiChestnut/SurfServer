@@ -34,7 +34,7 @@ class ErrorResponse(Exception):
 def findServer(h, block_list):
     for i in range(len(block_list)):
         b = block_list[i]
-        if (h in b.blcok_map):
+        if (h in b.block_map):
             return i
 
 '''

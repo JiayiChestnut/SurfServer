@@ -1,7 +1,7 @@
 B: 4
-metadata: localhost:6000
-seoul: 54.180.106.2:5000
-mumbai:	13.233.198.41:5000
-brazil:	54.233.215.163:5000
-ireland: 34.244.251.202:5000
+metadata:localhost:6000
+seoul:54.180.106.2:5000
+mumbai:13.233.198.41:5000
+brazil:54.233.215.163:5000
+ireland:34.244.251.202:5000
 2

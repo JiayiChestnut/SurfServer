@@ -190,6 +190,6 @@ if __name__ == '__main__':
     from rpyc.utils.server import ThreadPoolServer
     port = 6000
     server = ThreadPoolServer(MetadataStore(sys.argv[1]), port = port)
-    print("OK")
+#    print("OK")
 #    print("start metadatastore in port: " + str(port))
     server.start()

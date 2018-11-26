@@ -151,7 +151,7 @@ class SurfStoreClient():
 
         #add hashlist for it
         self.metadataStore.modify_file(filename, file_version + 1, list(hash_block_map.keys()))#use tuple
-        print("OK")
+#        print("OK")
         return
 
     """
@@ -170,11 +170,11 @@ class SurfStoreClient():
         version, hashlist = self.metadataStore.read_file(filename)
         if (version == 0 and len(hashlist) == 0):
             #no exist this filename
-            print("Not Found")
+#            print("Not Found")
             pass
         else:
             self.metadataStore.delete_file(filename, version + 1)
-            print("OK")
+#            print("OK")
 
         return
         """
@@ -212,11 +212,12 @@ class SurfStoreClient():
             raise e
 
 
-        #merge blocks， write file
+        #merge blocks,write file
         byteContent = b"".join(curr_blocks)
         with open(os.path.join(location, filename), "wb") as f:
             f.write(byteContent)
-        print("OK")
+#        print("OK")
+        print "OK"
         return
     """
 	 Use eprint to print debug messages to stderr
@@ -224,7 +225,8 @@ class SurfStoreClient():
 	 self.eprint("This is a debug message")
 	"""
     def eprint(*args, **kwargs):
-        print(*args, file=sys.stderr, **kwargs)
+#        print(*args, file=sys.stderr, **kwargs)
+        print *args, file=sys.stderr, **kwargs
     def test1(self):
         self.metadataStore.read_file("fil1.txt")
 

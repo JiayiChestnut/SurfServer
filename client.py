@@ -132,7 +132,7 @@ class SurfStoreClient():
                     block2insertIdx = i
                     minTime = pingTime
             block2insert = self.block_list[block2insertIdx]
-			print "save the files to block %d th" % block2insertIdx
+            print "save the files to block %d th" % block2insertIdx
             for h in hash_block_map.keys():
                 block2insert.store_block(h, hash_block_map[h])
 

@@ -1,13 +1,7 @@
 import rpyc
 import sys
 import copy
-"""
-The BlockStore service is an in-memory data store that stores blocks of data,
-indexed by the hash value.  Thus it is a key-value store. It supports basic
-get() and put() operations. It does not need to support deleting blocks of
-data–we just let unused blocks remain in the store. The BlockStore service only
-knows about blocks–it doesn't know anything about how blocks relate to files.
-"""
+
 
 DEBUG = False
 class BlockStore(rpyc.Service):

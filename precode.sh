@@ -1,5 +1,4 @@
 sudo yum install git-all
-y
 sudo pip install rpyc
 git clone https://github.com/JiayiChestnut/SurfServer.git
 

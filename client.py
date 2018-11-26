@@ -227,7 +227,8 @@ class SurfStoreClient():
 	"""
     def eprint(*args, **kwargs):
 #        print(*args, file=sys.stderr, **kwargs)
-        print *args, file=sys.stderr, **kwargs
+#        print *args, file=sys.stderr, **kwargs
+        return
     def test1(self):
         self.metadataStore.read_file("fil1.txt")
 
